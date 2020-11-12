@@ -5,9 +5,16 @@ const people = [
 ];
 
 people.forEach((person, index) => {
+  // debugger; // will stop js from running and pause it
   console.log(person.name);
+  // console.groupCollapsed(`${person.name}`);
+  // console.log(person.country);
+  // console.log(person.cool);
+  // console.log('Done!');
+  // console.groupEnd(`${person.name}`);
 });
 
+// console.table(people);
 // Console Methods
 
 // Callstack
@@ -24,12 +31,21 @@ people.forEach((person, index) => {
 
 // Some Setup Code
 
+function doALotOfStuff() {
+  console.group('Doing some stuff');
+  console.log('Hey Im one');
+  console.warn('watch out!');
+  console.error('noooooo');
+  console.groupEnd('Doing some stuff');
+}
+// doALotOfStuff()
+
 function doctorize(name) {
   return `Dr. ${name}`;
 }
 
 function greet(name) {
-  doesntExist();
+  doesntExist(); // Cause an error
   return `Hello ${name}`;
 }
 
@@ -56,3 +72,5 @@ async function fetchDadJoke() {
   console.log(joke);
   return joke;
 }
+
+// fetchDadJoke();
