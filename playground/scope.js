@@ -1,3 +1,12 @@
+// Global Scope
+// Function Scope
+// Block Scope
+
+
+// lexical scoping - where fns are defined matters 
+
+
+
 // const age = 100;
 
 // function go() {
