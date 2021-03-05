@@ -22,8 +22,8 @@ function handleBuyButtonClick(event) {
   const button = event.target;
   // console.log(button.textContent);
   // console.log(parseFloat(event.target.dataset.price));
-  console.log(event.target);
-  console.log(event.currentTarget);
+  console.log(event.target); // the thing that got clicked
+  console.log(event.currentTarget); // the thing that fired the event listener
   console.log(event.target === event.currentTarget);
   // Stop this event from bubbling up
   // event.stopPropagation();
