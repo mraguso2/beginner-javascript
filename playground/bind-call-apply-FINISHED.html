@@ -62,7 +62,7 @@
 
     const myMeal = bill.describe.call(bill, 'pizza', 'beer', 0.13);
     console.log(myMeal);
-    const myMeal2 = bill.describe.apply(bill, ['pizza', 'beer', 0.13]);
+    const myMeal2 = bill.describe.apply({...bill, total: 300}, ['pizza', 'beer', 0.13]);
     console.log(myMeal2);
 
   </script>
