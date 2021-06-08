@@ -32,7 +32,6 @@ function ask(options) {
       const skipButton = document.createElement('button');
       skipButton.type = 'button';
       skipButton.textContent = 'Cancel';
-      console.log(popup.firstChild);
       popup.firstElementChild.appendChild(skipButton);
       // TODO: listen for a click on that cancel button
       skipButton.addEventListener(
@@ -41,7 +40,7 @@ function ask(options) {
           resolve(null);
           destroyPopup(popup);
         },
-        { once: true }
+        { once: true } // immediately remove eventlistener after running once
       );
     }
     // listen for the submit event on the inputs
@@ -70,7 +69,7 @@ function ask(options) {
 // select all button that have a question
 async function askQuestion(e) {
   const button = e.currentTarget;
-  const cancel = 'cancel' in button.dataset;
+  const cancel = 'cancel' in button.dataset; // button.hasAttribute('data-cancel')
 
   const answer = await ask({
     title: button.dataset.question,
@@ -105,6 +104,10 @@ async function go() {
 }
 
 go();
+
+// ===========
+// for of allows you to pause the loop
+// ===========
 
 // async function askMany() {
 //   for (const question of questions) {
